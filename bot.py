@@ -1,3 +1,5 @@
+import asyncio
+
 from telegram import Bot
 
 from email_monitor import EmailMonitor
@@ -10,4 +12,4 @@ class TelegramBot:
 
     def start(self):
         self.monitor = EmailMonitor(self.bot)
-        self.monitor.start()
+        asyncio.run(self.monitor.start())
